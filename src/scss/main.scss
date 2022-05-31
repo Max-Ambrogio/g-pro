@@ -1,0 +1,174 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+
+@use 'reset';
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #1c1c1c;
+}
+
+/* 2. Content ================================= */
+.nav{
+	display: flex;
+	position: relative;
+	margin: 50px 40px;
+
+	.hamburger{
+		.hamburger-bars{
+			
+			.bar{
+				width: 2rem;
+				background-color: rgb(85, 85, 85);
+				height: 5px;
+				margin: 5px;
+			}
+		}
+		
+		.links{
+			display: none;
+		}
+	}
+
+	.logo{
+		width: 20%;
+		position: absolute;
+		left: 50%;
+	}
+}
+
+.hero{
+	h1{
+		font-size: 30px;
+		text-align: center;
+		color: white;
+	}
+	p{
+		font-size: 16px;
+		line-height: 22px;
+		text-align: center;
+		color: white;
+	}
+	img{
+		width: 100%;
+	}
+	.hero-colums{
+		display: flex;
+		justify-content: center;
+		padding: 40px;
+	}
+}
+
+.product-video{
+	height: 90vh;
+	background-color: black;
+	h3{
+		font-size: 16px;
+		color: white;
+	}
+}
+.article{
+	h1{
+		font-size: 30px;
+		color: white;
+	}
+	p{
+		font-size: 16px;
+		color: white;
+	}
+
+}	
+.obstacles{
+	background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-2-desktop.png?v=1");
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+.shortcuts{
+	background-color: white;
+	h1{
+		color: black;
+	}
+	p{
+		color: black;
+	}
+	img{
+		width: 100%;
+	}
+}
+
+.hesitation{
+	background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-4-desktop.png?v=1");
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+.misses{
+	img{
+		width: 100%;
+	}
+}
+.resistance{
+	img{
+		width: 100%;
+	}
+}
+.carbon{
+	img{
+		width: 100%;
+	}
+}
+.product-checkout{
+	display: flex;
+	.product{
+		width: 60%;
+		.large{
+			// width: 40%;
+		}
+	}
+	.product-copy{
+		.pro{
+			display: flex;
+			background-color: white;
+			width: 25%;
+			padding: 10px;
+			h3{
+				font-size: 16px;
+				font-weight: bold;
+				padding-right: 5px;
+			}
+			p{
+				padding-right: 5px;
+			}
+		}
+	}
+}
