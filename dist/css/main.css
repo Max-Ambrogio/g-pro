@@ -83,12 +83,12 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -103,34 +103,34 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: "";
-	content: none;
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* 
@@ -157,131 +157,306 @@ background: variables.$primary-color;
 */
 /* 1. Main Layout ================================= */
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
+}
+* h1 {
+  font-family: sans-serif;
+}
+* h2 {
+  font-family: sans-serif;
+}
+* h3 {
+  font-family: sans-serif;
+}
+* p {
+  font-family: sans-serif;
+}
+* a {
+  font-family: sans-serif;
 }
 
 body {
-	background: #1c1c1c;
+  background: #1c1c1c;
 }
 
 /* 2. Content ================================= */
 .nav {
-	display: flex;
-	position: relative;
-	margin: 50px 40px;
+  display: flex;
+  margin: 50px 40px;
 }
 .nav .hamburger .hamburger-bars .bar {
-	width: 2rem;
-	background-color: rgb(85, 85, 85);
-	height: 5px;
-	margin: 5px;
+  width: 2rem;
+  background-color: rgb(85, 85, 85);
+  height: 5px;
+  margin: 5px;
 }
 .nav .hamburger .links {
-	display: none;
+  display: none;
 }
 .nav .logo {
-	width: 20%;
-	position: absolute;
-	left: 50%;
+  width: 20%;
+  position: absolute;
+  right: 50%;
+  text-align: center;
 }
 
+.hero {
+  margin-left: 5%;
+  margin-right: 5%;
+}
 .hero h1 {
-	font-size: 30px;
-	text-align: center;
-	color: white;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  padding-bottom: 25px;
 }
 .hero p {
-	font-size: 16px;
-	line-height: 22px;
-	text-align: center;
-	color: white;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: white;
 }
 .hero img {
-	width: 100%;
+  width: 100%;
+  padding-bottom: 40px;
 }
 .hero .hero-colums {
-	display: flex;
-	justify-content: center;
-	padding: 40px;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.hero .hero-colums div {
+  width: 33%;
 }
 
 .product-video {
-	height: 90vh;
-	background-color: black;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  background-color: white;
+  z-index: -3;
+  justify-content: center;
 }
 .product-video h3 {
-	font-size: 16px;
-	color: white;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  align-self: flex-end;
+  justify-content: center;
+  margin-bottom: 50px;
+  width: 50%;
+  font-family: sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 20px;
+}
+.product-video video {
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  z-index: -2;
 }
 
 .article h1 {
-	font-size: 30px;
-	color: white;
+  font-size: 30px;
+  color: white;
 }
 .article p {
-	font-size: 16px;
-	color: white;
+  font-size: 16px;
+  color: white;
 }
 
 .obstacles {
-	background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-2-desktop.png?v=1");
-	height: 100vh;
-	width: 100%;
-	background-size: cover;
-	background-position: center;
+  background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-2-desktop.png?v=1");
+  height: 80vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.obstacles .obstacles-copy {
+  align-items: flex-end;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 30%;
+}
+.obstacles .obstacles-copy h1 {
+  padding-bottom: 40px;
 }
 
 .shortcuts {
-	background-color: white;
+  height: 80vh;
+  display: flex;
+  background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-3-desktop-left2.png?v=1");
+  background-position: 50%;
+  background-size: cover;
 }
-.shortcuts h1 {
-	color: black;
+.shortcuts .shortcuts-copy {
+  width: 30%;
+  -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 5%;
 }
-.shortcuts p {
-	color: black;
+.shortcuts .shortcuts-copy h1 {
+  color: black;
+  margin-bottom: 80px;
+}
+.shortcuts .shortcuts-copy p {
+  color: black;
 }
 .shortcuts img {
-	width: 100%;
+  width: 60%;
 }
 
 .hesitation {
-	background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-4-desktop.png?v=1");
-	height: 100vh;
-	width: 100%;
-	background-size: cover;
-	background-position: center;
+  background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-4-desktop.png?v=1");
+  height: 80vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hesitation .hesitation-copy {
+  align-items: flex-end;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 30%;
+}
+.hesitation .hesitation-copy h1 {
+  padding-bottom: 40px;
 }
 
-.misses img {
-	width: 100%;
+.misses {
+  display: flex;
+  height: 80vh;
+  background-position: 50%;
+  background-size: cover;
+  background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-5-desktop.png?v=1");
+}
+.misses .misses-copy {
+  -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 5%;
+  width: 30%;
+}
+.misses .misses-copy h1 {
+  margin-bottom: 40px;
 }
 
-.resistance img {
-	width: 100%;
+.resistance {
+  display: flex;
+  height: 80vh;
+  background-position: 50%;
+  background-size: cover;
+  background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-6-desktop.png?v=1");
+}
+.resistance .resistance-copy {
+  width: 30%;
+  -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 5%;
+}
+.resistance .resistance-copy h1 {
+  color: black;
+  margin-bottom: 40px;
+}
+.resistance .resistance-copy p {
+  color: black;
 }
 
-.carbon img {
-	width: 100%;
+.carbon {
+  display: flex;
+  height: 80vh;
+  background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/magenta-update/superlight-m-zerocarbon-desktop.png?v=1");
+  background-position: 50%;
+  background-size: cover;
+}
+.carbon .carbon-copy {
+  -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 5%;
+  width: 30%;
+}
+.carbon .carbon-copy h1 {
+  color: black;
+  margin-bottom: 40px;
+}
+.carbon .carbon-copy p {
+  color: black;
 }
 
 .product-checkout {
-	display: flex;
+  display: flex;
 }
 .product-checkout .product {
-	width: 60%;
+  width: 60%;
+}
+.product-checkout .product .product-large {
+  width: 100%;
+}
+.product-checkout .product .product-small {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-checkout .product .product-small img {
+  border: 1px solid rgb(165, 165, 165);
+}
+.product-checkout .product-copy {
+  width: 40%;
+}
+.product-checkout .product-copy h1 {
+  color: white;
+  font-size: 1.2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.product-checkout .product-copy p {
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.product-checkout .product-copy .price {
+  display: flex;
+}
+.product-checkout .product-copy .price .strike {
+  text-decoration: line-through;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .product-checkout .product-copy .pro {
-	display: flex;
-	background-color: white;
-	width: 25%;
-	padding: 10px;
+  display: flex;
+  background-color: white;
+  width: 28%;
+  padding: 10px;
+  margin-top: 10%;
+  margin-bottom: 5%;
 }
 .product-checkout .product-copy .pro h3 {
-	font-size: 16px;
-	font-weight: bold;
-	padding-right: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 5px;
 }
 .product-checkout .product-copy .pro p {
-	padding-right: 5px;
+  padding-right: 5px;
+}
+.product-checkout .product-copy .more-info .details {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(75, 71, 71);
+  margin: 20px 8px 0px 0px;
+}
+.product-checkout .product-copy .more-info .details h4 {
+  font-size: 1.2rem;
+  color: white;
+  margin-left: 15px;
+  font-family: sans-serif;
+}
+.product-checkout .product-copy .more-info .details .hide {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */
