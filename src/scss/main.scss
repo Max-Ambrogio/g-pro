@@ -24,6 +24,7 @@ background: variables.$primary-color;
 */
 
 @use 'reset';
+@use 'mixins';
 
 /* 1. Main Layout ================================= */
 
@@ -47,15 +48,17 @@ background: variables.$primary-color;
 }
 
 body {
-	background: #1c1c1c;
+	background: #111010;
 }
 
 /* 2. Content ================================= */
 .nav{
-	display: flex;
+	// display: flex;
 	// position: relative;
 	margin: 50px 40px;
+	text-align: center;
 	.hamburger{
+		position: absolute;
 		.hamburger-bars{
 			.bar{
 				width: 2rem;
@@ -69,27 +72,40 @@ body {
 		}
 	}
 	.logo{
-		width: 20%;
-		position: absolute;
-		right: 50%;
+		width: 25%;
 		text-align: center;
 	}
 }
 
 .hero{
-	margin-left: 5%;
-	margin-right: 5%;
-	h1{
-		font-size: 30px;
-		text-align: center;
-		color: white;
-		padding-bottom: 25px;
-	}
-	p{
-		font-size: 16px;
-		line-height: 22px;
-		text-align: center;
-		color: white;
+	margin: 0% 5%;
+	.hero-copy{
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 40px;
+		@include mixins.bp-large{
+			margin: 0% 15%;
+		}
+		h1{
+			font-size: 30px;
+			text-align: center;
+			color: white;
+			padding-bottom: 25px;
+		}
+		p{
+			font-size: 16pt;
+			line-height: 22pt;
+			text-align: center;
+			color: rgb(220, 216, 216);
+			padding-bottom: 20px
+		}
+		.hero-bar{
+			width: 17%;
+			height: 9px;
+			background-color: rgb(220, 216, 216);
+			align-self: center;
+			margin-bottom: 25px;
+		}
 	}
 	img{
 		width: 100%;
@@ -98,23 +114,43 @@ body {
 	.hero-colums{
 		display: flex;
 		justify-content: center;
+		flex-direction: column;
 		padding-top: 40px;
 		padding-bottom: 40px;
-		div{
-			width: 33%;
+		h1{
+			font-size: 25pt;
+			text-align: center;
+			font-weight: bold;
+			color: white;
+			padding-bottom: 25px;
+			text-transform: uppercase;
+		}
+		p{
+			font-size: 16pt;
+			text-transform: uppercase;
+			line-height: 22px;
+			font-weight: bold;
+			text-align: center;
+			color: rgb(155, 151, 151);
+			padding-bottom: 20px
+		}
+		@include mixins.bp-large{
+			flex-direction: row;
+			justify-content: space-between;	
 		}
 	}
 }
 
 .product-video{
-	height: 90vh;
+	height: 80vh;
 	position: relative;
 	display: flex;
 	background-color: white;
 	z-index: -3;
 	justify-content: center;
+	overflow: hidden;
 	h3{
-		font-size: 16px;
+		font-size: 1.1rem;
 		color: rgb(0, 0, 0);
 		align-self: flex-end;
 		justify-content: center;
@@ -125,27 +161,55 @@ body {
 		text-transform: uppercase;
 		font-weight: bold;
 		line-height: 20px;
+		z-index: 10;
+	}
+	@media (min-aspect-ratio: 9/16 ){
+		video{
+			height: 100vh;
+			overflow: hidden;
+			width: 100%;
+			position: absolute;
+			z-index: -2;
+		}
+	}
+	@media (max-aspect-ratio: 16/9 ){
+		video{
+			// height: 100%;
+			overflow: hidden;
+			position: absolute;
+			// width: 300%;
+		}
 	}
 	video{
-		height: 100vh;
-		overflow: hidden;
-		// width: 100%;
-		position: absolute;
-		z-index: -2;
+		@include mixins.bp-small{
+			width: 280%;
+		}
 	}
+
 }
 .article{
 	h1{
 		font-size: 30px;
 		color: white;
+		font-weight: bolder;
+		line-height: 30px;
 	}
 	p{
 		font-size: 16px;
 		color: white;
+		font-weight: 100;
+	}
+
+	.bar{
+		height: 10px;
+		width: 40%;
+		background-color: black;
+		margin: 50px 0px;
 	}
 
 }	
 .obstacles{
+
 	background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-2-desktop.png?v=1");
 	height: 80vh;
 	width: 100%;
@@ -153,14 +217,15 @@ body {
 	background-position: center;
 	position: relative;
 	.obstacles-copy{
+		line-height: 25px;
 		align-items: flex-end;
 		position: absolute;
 		bottom: 10%;
 		left: 5%;
 		width: 30%;
-		h1{
-			padding-bottom: 40px;
-		}
+	}
+	.bar{
+		background-color: white;
 	}
 
 }
@@ -172,12 +237,12 @@ body {
 	background-position: 50%;
 	background-size: cover;
 	.shortcuts-copy{
+		line-height: 25px;
 		width: 30%;
 		align-self: center;
 		margin-left: 5%;
 		h1{
 			color: black;
-			margin-bottom: 80px;
 		}
 		p{
 			color: black;
@@ -196,14 +261,15 @@ body {
 	background-position: center;
 	position: relative;
 	.hesitation-copy{
-		align-items: flex-end;
+		line-height: 25px;
+		align-self: flex-end;
 		position: absolute;
 		bottom: 10%;
 		left: 5%;
 		width: 30%;
-		h1{
-			padding-bottom: 40px;
-		}
+	}
+	.bar{
+		background-color: white;
 	}
 }
 .misses{
@@ -213,27 +279,28 @@ body {
 	background-size: cover;
 	background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-5-desktop.png?v=1");
 	.misses-copy{
+		line-height: 25px;
 		align-self: center;
 		margin-left: 5%;
 		width: 30%;
-		h1{
-			margin-bottom: 40px;
-		}
+	}
+	.bar{
+		background-color: white;
 	}
 }
 .resistance{
 	display: flex;
 	height: 80vh;
-	background-position: 50%;
+	background-position: 40%;
 	background-size: cover;
 	background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-6-desktop.png?v=1");
 	.resistance-copy{
+		line-height: 25px;
 		width: 30%;
 		align-self: center;
 		margin-left: 5%;
 		h1{
 			color: black;
-			margin-bottom: 40px;
 		}
 		p{
 			color: black;
@@ -247,12 +314,12 @@ body {
 	background-position: 50%;
 	background-size: cover;
 	.carbon-copy{
+		line-height: 25px;
 		align-self: center;
 		margin-left: 5%;
 		width: 30%;
 		h1{
 			color: black;
-			margin-bottom: 40px;
 		}
 		p{
 			color: black;
@@ -260,66 +327,166 @@ body {
 	}
 }
 .product-checkout{
+	padding-top: 20px;
+	padding-bottom: 60px;
 	display: flex;
+	flex-direction: column;
+	@include mixins.bp-large{
+		flex-direction: row;
+		
+	}
 	.product{
-		width: 60%;
+		margin-right: 20px;
+		width: 100%;
 		.product-large{
 			width: 100%;
 		}
 		.product-small{
-			width: 40%;
+			width: 100%;
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: center;
 			img{
-				border: 1px solid rgb(165, 165, 165);
+				border: 2px solid rgb(165, 165, 165);
+				border-radius: 10px;
+				width: 14%;
+				margin: 10px;
+				transition: .3s ease-in-out;
+			}
+			img:hover{
+				transform: scale(1.1);
 			}
 		}
 	}
 	
 	.product-copy{
-		width: 40%;
+		width: 70%;
+		align-self: center;
+		@include mixins.bp-large{
+			margin-right: 2%;
+		}
 		h1{
 			color: white;
-			font-size: 1.2rem;
+			font-size: 2rem;
+			text-transform: uppercase;
+			font-weight: bolder;
 			padding-top: 10px;
 			padding-bottom: 10px;
 		}
 		p{
-			color: rgb(0, 0, 0);
+			color: rgb(255, 255, 255);
 			font-size: 1.2rem;
 			padding-top: 10px;
 			padding-bottom: 10px;
+			text-transform: uppercase;
 		}
 		.price{
 			display: flex;
+			
 			.strike{
 				text-decoration: line-through;
 				padding-left: 5px;
 				padding-right: 5px;
 			}
+			.sale{
+				background-color: #00B8FC;
+				letter-spacing: 1px;
+				color: black;
+				padding: 2px 11px;
+				align-self: center;
+			}
 		}
 		.pro{
 			display: flex;
 			background-color: white;
-			width: 28%;
-			padding: 10px;
+			width: 170px;
+			padding: 10px 20px;
 			margin-top: 10%;
 			margin-bottom: 5%;
+			align-items:center;
 			h3{
-				font-size: 16px;
-				font-weight: bold;
+				font-size: 16pt;
+				font-weight: bolder;
 				padding-right: 5px;
+				text-transform: uppercase;
 			}
 			p{
 				padding-right: 5px;
+				color: black;
 			}
+		}
+		.add{
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			font-size: 12pt;
+			padding: 10px 40px;
+			margin: 20px 0px;
+			font-family: sans-serif;
+			text-transform: uppercase;
+			background-color: #00B8FC;
+			border-radius: 8px;
+			border: 3px solid #00b8fc;
+			transition: .4s ease-in-out;
+			p{
+				padding-left: 20px;
+				color: black;
+
+			}
+
+		}
+		.add:hover{
+			background-color: black;
+			p{
+				color: #00B8FC;
+			}
+		}
+
+		.shipping{
+			display: flex;
+			align-items: center;
+			p{
+				padding-left: 20px;
+			}
+			img{
+				width: 8%;
+				// padding-right: 20px;
+			}
+		}
+		.reviews{
+			align-items: center;
+			padding: 20px 0px;
+			a{
+				text-decoration: underline;
+				color: white;
+				padding-left: 10px;
+			}
+			img{
+				width: 5%;
+			}
+		}
+		.description{
+			text-transform: inherit;
+			line-height: 20pt;
+			font-weight: bold;
 		}
 		.more-info{
 			.details{
 				padding-top: 20px;
 				padding-bottom: 20px;
-				background-color: rgb(75, 71, 71);
+				background-color: rgb(58, 57, 57);
 				margin: 20px 8px 0px 0px;
+				width: 100%;
+				text-transform: uppercase;
+				font-weight: bold;
+				border-radius: 10px;
+				.title{
+					display: flex;
+					justify-content: space-between;
+					img{
+						margin-right: 30px;
+					}
+				}
 				h4{
 					font-size: 1.2rem;
 					color: white;
@@ -332,4 +499,72 @@ body {
 			}
 		}
 	}
+}
+
+footer{
+	padding: 10px;
+	background-color: white;
+	.colums{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding: 100px 10px;
+		div{
+			padding: 20px;
+		}
+		div:last-child{
+			padding-right: 60px
+		}
+		li{
+			line-height: 35px;
+			a{
+				text-decoration: none;
+				color: rgb(0, 0, 0);
+				font-size: 1rem;
+				padding: 0px 0px 0px 10px;
+				text-transform: uppercase;
+			}
+			a:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	.email-input{
+		text-align: center;
+		input{
+			height: 60px;
+			border: none;
+			text-transform: uppercase;
+			font-size: 1.1rem;
+		}
+		button{
+			padding: 15px 40px;
+			font-size: 1.1rem;
+			text-transform: uppercase;
+			color: white;
+			background-color: black;
+			border-radius: 10px;
+			transition: .4s ease-in-out;
+		}
+		button:hover{
+			transform: scale(1.1);
+		}
+		
+	}
+	.legal{
+			margin: 0% 3%;
+			display: flex;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			justify-content: space-between;
+			a{
+				text-decoration: none;
+				color: grey;
+			}
+			.social{
+				img{
+					padding-right: 20px;
+				}
+			}
+		}
 }
