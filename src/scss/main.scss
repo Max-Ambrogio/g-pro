@@ -222,7 +222,10 @@ body {
 		position: absolute;
 		bottom: 10%;
 		left: 5%;
-		width: 30%;
+		width: 40%;
+		@include mixins.bp-large{
+			width: 30%;
+		}
 	}
 	.bar{
 		background-color: white;
@@ -238,9 +241,12 @@ body {
 	background-size: cover;
 	.shortcuts-copy{
 		line-height: 25px;
-		width: 30%;
+		width: 40%;
 		align-self: center;
 		margin-left: 5%;
+		@include mixins.bp-large{
+			width: 30%;
+		}
 		h1{
 			color: black;
 		}
@@ -266,7 +272,10 @@ body {
 		position: absolute;
 		bottom: 10%;
 		left: 5%;
-		width: 30%;
+		width: 40%;
+		@include mixins.bp-large{
+			width: 30%;
+		}
 	}
 	.bar{
 		background-color: white;
@@ -282,7 +291,10 @@ body {
 		line-height: 25px;
 		align-self: center;
 		margin-left: 5%;
-		width: 30%;
+		width: 40%;
+		@include mixins.bp-large{
+			width: 30%;
+		}
 	}
 	.bar{
 		background-color: white;
@@ -296,9 +308,12 @@ body {
 	background-image: url("https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto,f_auto,dpr_auto/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/superlight-6-desktop.png?v=1");
 	.resistance-copy{
 		line-height: 25px;
-		width: 30%;
+		width: 40%;
 		align-self: center;
 		margin-left: 5%;
+		@include mixins.bp-large{
+			width: 30%;
+		}
 		h1{
 			color: black;
 		}
@@ -318,6 +333,9 @@ body {
 		align-self: center;
 		margin-left: 5%;
 		width: 30%;
+		@include mixins.bp-large{
+			width: 30%;
+		}
 		h1{
 			color: black;
 		}
@@ -331,6 +349,7 @@ body {
 	padding-bottom: 60px;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 	@include mixins.bp-large{
 		flex-direction: row;
 		
@@ -338,14 +357,23 @@ body {
 	.product{
 		margin-right: 20px;
 		width: 100%;
+		text-align: center;
+		align-self: center;
 		.product-large{
 			width: 100%;
+			@include mixins.bp-large{
+				width: 66%;
+			}
 		}
 		.product-small{
 			width: 100%;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
+			@include mixins.bp-large{
+				width: 67%;
+				margin-left: 14%;
+			}
 			img{
 				border: 2px solid rgb(165, 165, 165);
 				border-radius: 10px;
@@ -436,7 +464,7 @@ body {
 
 		}
 		.add:hover{
-			background-color: black;
+			background-color: #111010;
 			p{
 				color: #00B8FC;
 			}
@@ -486,6 +514,15 @@ body {
 					img{
 						margin-right: 30px;
 					}
+					.plus{
+						div{
+							width: 10px;
+							height: 20px;
+							background-color: white;
+							margin: 5px;
+							position: absolute;
+						}
+					}
 				}
 				h4{
 					font-size: 1.2rem;
@@ -495,6 +532,9 @@ body {
 				}
 				.hide{
 					display: none;
+				}
+				.show{
+					display: block;
 				}
 			}
 		}
@@ -510,7 +550,7 @@ footer{
 		flex-wrap: wrap;
 		padding: 100px 10px;
 		div{
-			padding: 20px;
+			padding: 9px;
 		}
 		div:last-child{
 			padding-right: 60px
